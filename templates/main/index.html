@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Textutils | A Text Utility</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"  data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Textutils</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+{% if problem %}
+<div class="alert alert-danger alert-dismissible fade show">
+    <strong>Error!</strong>{{ error }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+</div>
+{% endif %}
+
+<form action="/modify/" method="post" accept-charset="utf-8" class="mt-2 m-2 p-2">
+  {% csrf_token %}
+  <label for="textBox" class="form-label">Enter the text to modify</label>
+  <textarea id="textBox" class="form-control" rows="6" name="data"></textarea><br/>
+  <div>
+    <input class="form-check-input" type="checkbox" role="switch" name="rmpunc" id="item1" >
+  <label class="form-check-label" for="item1" >Remove Punctuation</label><br/>
+  <input class="form-check-input" type="checkbox" role="switch" name="rmnewline" id="item2" >
+  <label class="form-check-label" for="item2">Remove New Lines</label><br/>
+  <input class="form-check-input" type="checkbox" role="switch" name="toupper" id="item3" >
+  <label class="form-check-label" for="item3">Convert To UPPPERCASE</label><br/>
+  <input class="form-check-input" type="checkbox" role="switch" name="tolower" id="item4" >
+  <label class="form-check-label" for="item4">Convert To lowercase</label><br/>
+  <input class="form-check-input" type="checkbox" role="switch" name="totitle" id="item5" >
+  <label class="form-check-label" for="item5">Convert To Title</label><br/>
+  <input class="form-check-input" type="checkbox" role="switch" name="rmwhspace" id="item6" >
+  <label class="form-check-label" for="item6">Remove White Spaces</label><br/>
+  </div>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
