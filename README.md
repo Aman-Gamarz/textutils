@@ -58,4 +58,4 @@ Contributions to TextUtils are welcome! If you have ideas for additional text ma
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-Thank you for using TextUtils! If you have any questions or encounter any issues, feel free to contact the author, Aman Gamarz, at [aman@example.com](mailto:aman@example.com).
+Thank you for using TextUtils! If you have any questions or encounter any issues, feel free to write a review.
